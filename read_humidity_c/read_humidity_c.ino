@@ -27,13 +27,12 @@ void loop() {
   // Water if resistance is higher than 500
   boolean water = earth_humidity_1 > 500;
   if (water) {
-    while (analogRead(EARTH1_PIN) > 350) {
+    while (analogRead(EARTH1_PIN) > 380) {
       digitalWrite(PUMP1_PIN, HIGH);
       Serial.println("Water");
     } 
-  } else {
     digitalWrite(PUMP1_PIN, LOW);
-  }  
+  }
   
   delay(10000);
 }
